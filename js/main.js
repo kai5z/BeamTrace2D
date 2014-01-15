@@ -76,7 +76,7 @@ $(function() {
         }
     }
 
-    //If the walls or listener position are updated, the solver needs to be initialized again
+    //If the walls or source position are updated, the solver needs to be initialized again
     $('#beamCanvas').click(function(e) {
         source.p0 = [e.offsetX, e.offsetY]; //Change the source position
         solver = new BeamTrace2D.Solver(walls,source,reflection_order); //Init the solver with the new source position
