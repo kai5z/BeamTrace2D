@@ -525,7 +525,6 @@ BeamTrace2D.Solver = function(b_walls,b_source,reflection_order) {
         {
             prev_node = {id: -1}; //No walls to ignore in ray tracing yet
             p_tree = [p0]; //Add the listener location to the path
-
         }
 
         //1) Find intersection from location to next image source
@@ -560,33 +559,18 @@ BeamTrace2D.Solver = function(b_walls,b_source,reflection_order) {
     }
 
     /* Recursive function for going through all beams. All beam paths are tested against the listener. node should first be beamTree's mainNode */
+    /* Returns the reflection paths according to: [ [[x,y,wall index],[x,y,wall index],[x,y,wall index],...],[path2],... ] */
     function findPaths(listener,walls,bsp,node)
     {
+        var path_array = [];
         for(var i = 0; i < node.children.length; i++) //Go through all nodes recursively
         {
-            findPaths(listener,walls,bsp,node.children[i]);
+            path_array = path_array.concat(findPaths(listener,walls,bsp,node.children[i]));
         }
-        var p_tree = traverseBeam(listener.p0,walls,bsp,node); //Check if a path can be found
-        if(p_tree) //A path was found
-        {
-            //paint the path!
-            var canvas = document.getElementById("beamCanvas");
-            var ctx = canvas.getContext("2d");
-
-            var first = true;
-            ctx.strokeStyle = "rgba(0,0,255,0.2)";
-            ctx.beginPath();
-            ctx.lineWidth = 2;
-            p_tree.forEach(function(p){
-                if(first) { ctx.moveTo(p[0],p[1]); first = false; }
-                else { ctx.lineTo(p[0],p[1]); }
-            });
-            ctx.stroke();
-            ctx.strokeStyle = "black";
-            ctx.lineWidth = 1;
-        }
-
-        return p_tree;
+        var p_tree = traverseBeam(listener.p0,walls,bsp,node);//Find all valid paths to current beam node
+        if(p_tree) //If we found a valid path...
+            path_array.push(p_tree); //...add it to the path array
+        return path_array; //An array of arrays
     }
 
     /* Initialization */
@@ -594,10 +578,10 @@ BeamTrace2D.Solver = function(b_walls,b_source,reflection_order) {
     beams = new BeamTree(source,walls,this.MAX_ORDER);
 
     /* Public stuff */
-    this.update = function(listener) {
+    this.getPaths = function(listener) {
         if(typeof listener !== 'undefined')
         {
-            findPaths(listener,walls,bsp,beams.mainNode);
+            return findPaths(listener,walls,bsp,beams.mainNode);
         }
         else
         {
