@@ -3,7 +3,7 @@
  *
  * =======
  *
- * Copyright (C) 2014 Kai Saksela
+ * Copyright (C) 2014 Kai Saksela. Based on the very basic principles of beam tracing as presented in "Accelerated beam tracing algorithm" by S. Laine, S. Siltanen, T. Lokki, and L. Savioja.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
  *
@@ -15,7 +15,7 @@
  *
  * =======
  *
- * This code is for testing different beam tracing techniques in a simplified 2D environment. The basic principles are very loosely based on the (much more complicated) EVERT beam tracing library:
+ * This code is for testing different beam tracing techniques in a simplified 2D environment.
  * - BSP trees (in this case the splitting planes are not aligned) for accelerated ray tracing
  * - Beam trees with polygon ID's
  * - The optimization techniques are absent in this version, so it's not nearly as fast as it would be with them
