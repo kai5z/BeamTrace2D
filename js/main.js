@@ -78,7 +78,7 @@ $(function() {
 
     //If the walls or source position are updated, the solver needs to be initialized again
     $('#beamCanvas').click(function(e) {
-        source.p0 = [e.offsetX, e.offsetY]; //Change the source position
+        source.p0 = [e.pageX - $(this).offset().left, e.pageY - $(this).offset().top]; //Change the source position
         solver = new BeamTrace2D.Solver(walls,source,reflection_order); //Init the solver with the new source position
         path_array = solver.getPaths(listener); //Update reflection paths
         redraw();
@@ -86,7 +86,7 @@ $(function() {
 
     //Update the listener position
     $('#beamCanvas').mousemove(function(e) {
-        listener.p0 = [e.offsetX, e.offsetY];
+        listener.p0 = [e.pageX - $(this).offset().left, e.pageY - $(this).offset().top]; //Change the listener position
         path_array = solver.getPaths(listener); //Update reflection paths
         redraw();
     });

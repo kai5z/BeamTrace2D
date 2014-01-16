@@ -9,3 +9,4 @@ See index.html/main.js for a demonstration of how to use the algorithm. Clicking
 
 Possible improvements include:
 - BSP tree optimization
+- For some reason, the implementation is *much* slower in Firefox than Chrome
