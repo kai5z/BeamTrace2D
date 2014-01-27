@@ -73,7 +73,7 @@ BeamTrace2D.Source.prototype.draw = function(ctx)
 /* The solver */
 BeamTrace2D.Solver = function(b_walls,b_source,reflection_order) {
     "use strict";
-    this.MAX_ORDER = typeof reflection_order !== 'undefined' ? reflection_order : 4; //Max order of reflections, default 4
+    this.MAX_ORDER = typeof reflection_order !== 'undefined' ? reflection_order - 2 : 4; //Max order of reflections, default 4
 
     //Private variables (if these are changed the solution will be invalid, source movement requires init)
     var walls = b_walls;
