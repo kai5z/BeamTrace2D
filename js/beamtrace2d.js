@@ -400,7 +400,7 @@ BeamTrace2D.Solver = function(b_walls,b_source,reflection_order) {
                 {
                     //MAYBE: Intersection with line next to B AND line next to C
                     var int_b = lineIntersection(beam.p1[0],beam.p1[1],beam.p2[0],beam.p2[1],walls[i].p1[0],walls[i].p1[1],walls[i].p2[0],walls[i].p2[1]);
-                    if(int_b[4])
+                    if(int_b && int_b[4])
                     {
                         var int_c = lineIntersection(beam.p1[0],beam.p1[1],beam.p1[0]+(beam.p1[0]-beam.vs[0])*2,beam.p1[1]+(beam.p1[1]-beam.vs[1])*2,walls[i].p1[0],walls[i].p1[1],walls[i].p2[0],walls[i].p2[1]);
                         new_line = {p1: int_b, p2: int_c};
