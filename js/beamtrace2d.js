@@ -98,7 +98,7 @@ BeamTrace2D.Solver = function(b_walls,b_source,reflection_order) {
         };
         denominator = ((y22 - y21) * (x12 - x11)) - ((x22 - x21) * (y12 - y11));
         if (denominator == 0) {
-            return null;
+            return reult;
         }
         a = y11 - y21;
         b = x11 - x21;
