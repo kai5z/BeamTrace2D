@@ -1,13 +1,18 @@
-*Moved from bitbucket here to keep my public repositories at the same place*
-
 Beam tracing algorithm in 2D.
 
 Utilizing a tree structure for the beams and a BSP tree for accelerated ray tracing.
 
+### Demo
+
+```
+npm install
+npm start
+```
+
+app should be running on [http://localhost:3000](http://localhost:3000). Clicking moves the source.
+
 The basics are very loosely based on the following paper:
 .. S. Laine, S. Siltanen, T. Lokki, and L. Savioja. Accelerated beam tracing algorithm. Applied Acoustics, 70(1):172–181, 2009
-
-See index.html/main.js for a demonstration of how to use the algorithm. Clicking moves the source.
 
 Possible improvements include:
 - BSP tree optimization
