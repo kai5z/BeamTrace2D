@@ -1,6 +1,6 @@
 {
   "name": "beam-trace-2d",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Beam tracing algorithm in 2D",
   "main": "js/beamtrace2d.js",
   "scripts": {
