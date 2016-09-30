@@ -4,7 +4,7 @@
   "description": "Beam tracing algorithm in 2D",
   "main": "js/beamtrace2d.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
@@ -20,5 +20,10 @@
   "bugs": {
     "url": "https://github.com/kai5z/BeamTrace2D/issues"
   },
-  "homepage": "https://github.com/kai5z/BeamTrace2D#readme"
+  "homepage": "https://github.com/kai5z/BeamTrace2D#readme",
+  "dependencies": {
+    "express": "^4.14.0",
+    "jquery": "^1.12.4",
+    "qunitjs": "^2.0.1"
+  }
 }
