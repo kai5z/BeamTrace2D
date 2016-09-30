@@ -1,0 +1,24 @@
+{
+  "name": "beam-trace-2d",
+  "version": "1.0.0",
+  "description": "Beam tracing algorithm in 2D",
+  "main": "js/beamtrace2d.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kai5z/BeamTrace2D.git"
+  },
+  "keywords": [
+    "applied acoustics",
+    "acoustics",
+    "beam tracing"
+  ],
+  "author": "Kai Saksela",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kai5z/BeamTrace2D/issues"
+  },
+  "homepage": "https://github.com/kai5z/BeamTrace2D#readme"
+}
